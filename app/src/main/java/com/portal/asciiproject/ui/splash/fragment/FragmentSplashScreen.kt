@@ -3,6 +3,7 @@ package com.portal.asciiproject.ui.splash.fragment
 import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.portal.asciiproject.compose.BaseFragment
 import com.portal.asciiproject.compose.viewBinding
 import com.portal.asciiproject.R
@@ -24,6 +25,9 @@ class FragmentSplashScreen : BaseFragment(R.layout.fragment_splash_screen) {
 
 
     override fun initUI(savedInstanceState: Bundle?) {
+        binding.btnSplash.setButtonOnClick{
+            findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
+        }
     }
 
 

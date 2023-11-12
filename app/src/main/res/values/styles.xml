@@ -19,7 +19,10 @@
 
 
 
-
+    <style name="CustomSearchViewTheme" parent="Widget.AppCompat.SearchView">
+        <!-- Diğer özellikler -->
+        <item name="android:textColorHint">@color/white</item>
+    </style>
     <style name="TextAppearance.Shrine.TopHeadline.Bold" parent="TextAppearance.Shrine.TopHeadline">
         <item name="android:textStyle">bold</item>
     </style>

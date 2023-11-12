@@ -1,6 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_240dp"
+        android:background="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.portal.asciiproject.utilities.customviews.AsciiTextView
+        android:id="@+id/tvLocationHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_24dp"
+        android:text="@string/location"
+        android:textColor="@color/locationcolor"
+        android:textSize="@dimen/ts_12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cvProfilePhoto"
+        app:textType="Regular" />
+
+    <com.portal.asciiproject.utilities.customviews.AsciiTextView
+        android:id="@+id/tvLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/locationcolr"
+        android:textSize="@dimen/ts_14sp"
+        app:layout_constraintStart_toStartOf="@id/tvLocationHeader"
+        app:layout_constraintTop_toBottomOf="@id/tvLocationHeader"
+        tools:text="Atasehir, Istanbul" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvProfilePhoto"
+        android:layout_width="@dimen/dimen_36dp"
+        android:layout_height="@dimen/dimen_36dp"
+        android:layout_marginTop="@dimen/dimen_48dp"
+        android:layout_marginEnd="@dimen/dimen_36dp"
+        app:cardCornerRadius="@dimen/dimen_8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/dimen_36dp"
+            android:layout_height="@dimen/dimen_36dp"
+            android:layout_marginTop="@dimen/dimen_48dp"
+            android:layout_marginEnd="@dimen/dimen_36dp"
+            android:background="@color/blue_grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.cardview.widget.CardView>
+
+
+    <com.portal.asciiproject.utilities.customviews.CustomSearchView
+        android:id="@+id/customSearchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_24dp"
+        android:layout_marginTop="@dimen/dimen_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvLocation"
+        app:layout_constraintTop_toBottomOf="@id/tvLocation" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        app:cardCornerRadius="@dimen/dimen_16dp"
+        app:cardElevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/customSearchView">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/coffeetest" />
+
+        <com.portal.asciiproject.utilities.customviews.AsciiTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_16dp"
+            android:layout_marginTop="@dimen/dimen_16dp"
+            android:background="@drawable/bg_promo"
+            android:paddingHorizontal="@dimen/dimen_6dp"
+            android:paddingVertical="@dimen/dimen_4dp"
+            android:text="@string/promo"
+            android:textColor="@color/white"
+            android:textSize="@dimen/ts_16sp"
+            app:textType="Semibold" />
+
+        <com.portal.asciiproject.utilities.customviews.AsciiTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_24dp"
+            android:layout_marginTop="@dimen/dimen_56dp"
+            android:background="@drawable/bg_free_rounded"
+            android:paddingHorizontal="@dimen/dimen_4dp"
+            android:paddingVertical="@dimen/dimen_2dp"
+            android:text="@string/buy_free"
+            android:textColor="@color/black"
+            android:textSize="@dimen/ts_24sp"
+            app:textType="Bold_underlined" />
+    </androidx.cardview.widget.CardView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

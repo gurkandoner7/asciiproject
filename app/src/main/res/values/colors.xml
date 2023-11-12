@@ -77,5 +77,13 @@
 
 
     <color name="ascii_brown_button">#C67C4E</color>
+    <color name="header_text_rv">#2F2D2C</color>
+    <color name="with_color">#9B9B9B</color>
+    <color name="locationcolor">#ACACAC</color>
+    <color name="locationcolr">#DCDCDC</color>
+    <color name="searchbar">#313131</color>
+    <color name="searchbarcolor">#989898</color>
+    <color name="promo_red">#ED5151</color>
+    <color name="freecolor">#6DFFFFFF</color>
 
 </resources>

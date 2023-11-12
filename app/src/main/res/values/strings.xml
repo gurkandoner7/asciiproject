@@ -3,4 +3,9 @@
     <string name="get_started">Get Started</string>
     <string name="teaser_coffee_text">Coffee so good, \nyour taste buds\n will love it.</string>
     <string name="the_best_grain">The best grain, the finest roast, the powerful flavor.</string>
+    <string name="with">with %!%</string>
+    <string name="location">Location</string>
+    <string name="search_coffee">Search Coffee</string>
+    <string name="promo">Promo</string>
+    <string name="buy_free">Buy one get \none FREE</string>
 </resources>
