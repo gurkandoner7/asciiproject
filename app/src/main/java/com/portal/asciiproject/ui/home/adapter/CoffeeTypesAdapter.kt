@@ -5,8 +5,8 @@ import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.portal.asciiproject.R
 import com.portal.asciiproject.data.ProductItem
 import com.portal.asciiproject.databinding.ItemProductBinding
@@ -15,7 +15,9 @@ import com.portal.asciiproject.utilities.helper.Util
 @SuppressLint("NotifyDataSetChanged")
 class CoffeeTypesAdapter(
     private val context: Context,
-    private val productItems: MutableList<ProductItem>
+    private val productItems: MutableList<ProductItem>,
+    private val onItemClicked: (ProductItem) -> Unit
+
 ) : RecyclerView.Adapter<CoffeeTypesAdapter.CoffeeTypeViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CoffeeTypeViewHolder {
@@ -46,9 +48,13 @@ class CoffeeTypesAdapter(
             binding.apply {
                 tvHeader.setText(productItem.productName)
                 tvPrice.setText(productItem.productPrice)
+                clItem.setOnClickListener {
+                    onItemClicked(productItem)
+                }
                 ivCoffee.setImageResource(productItem.productImage ?: R.drawable.profilecat)
                 tvWith.setText(productItem.productWith?.let {
-                    context.getString(R.string.with).replace(Util.MAGIC_KEY,
+                    context.getString(R.string.with).replace(
+                        Util.MAGIC_KEY,
                         it
                     )
                 })
@@ -59,6 +65,7 @@ class CoffeeTypesAdapter(
             }
         }
     }
+
     fun addItem(items: List<ProductItem>) {
         productItems.addAll(items)
         notifyDataSetChanged()
