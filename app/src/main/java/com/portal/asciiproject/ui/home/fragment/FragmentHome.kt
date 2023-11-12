@@ -1,4 +1,4 @@
-package com.portal.asciiproject.ui.splash.fragment
+package com.portal.asciiproject.ui.home.fragment
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -9,10 +9,9 @@ import com.portal.asciiproject.R
 import com.portal.asciiproject.databinding.FragmentSplashScreenBinding
 import com.portal.asciiproject.ui.splash.viewmodel.SplashScreenViewModel
 import dagger.hilt.android.AndroidEntryPoint
-
 @SuppressLint("CustomSplashScreen")
 @AndroidEntryPoint
-class FragmentSplashScreen : BaseFragment(R.layout.fragment_splash_screen) {
+class FragmentHome : BaseFragment(R.layout.fragment_splash_screen) {
 
     private val splashViewModel: SplashScreenViewModel by viewModels()
 

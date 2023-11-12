@@ -1,6 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivSplashCoffee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bg_splash"
+        />
+
+    <com.portal.asciiproject.utilities.customviews.AsciiContinueButton
+        android:id="@+id/btnSplash"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_42dp"
+        android:layout_marginHorizontal="@dimen/dimen_36dp"
+        android:text="@string/get_started"
+        android:textSize="@dimen/ts_16sp"
+        android:layout_marginBottom="@dimen/dimen_36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <com.portal.asciiproject.utilities.customviews.AsciiTextView
+        android:layout_width="@dimen/dimen_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_32dp"
+        android:text="@string/teaser_coffee_text"
+        android:textColor="@color/white"
+        android:textSize="@dimen/ts_30sp"
+        android:layout_marginBottom="@dimen/dimen_16dp"
+        app:layout_constraintBottom_toTopOf="@+id/asciiTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:textAlignment="center"
+        app:textType="Bold" />
+
+    <com.portal.asciiproject.utilities.customviews.AsciiTextView
+        style="@android:style/Animation"
+        android:id="@+id/asciiTextView"
+        android:layout_width="@dimen/dimen_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_32dp"
+        android:layout_marginBottom="@dimen/dimen_16dp"
+        android:text="@string/the_best_grain"
+        android:textColor="@color/light_grey"
+        android:textSize="@dimen/ts_16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSplash"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:textAlignment="center"
+        app:textType="Regular" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

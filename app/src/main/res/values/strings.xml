@@ -1,3 +1,6 @@
-<resources>
-    <string name="app_name">asciiproject</string>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ExtraTranslation">
+    <string name="app_name">Ascii</string>
+    <string name="get_started">Get Started</string>
+    <string name="teaser_coffee_text">Coffee so good, \nyour taste buds\n will love it.</string>
+    <string name="the_best_grain">The best grain, the finest roast, the powerful flavor.</string>
 </resources>

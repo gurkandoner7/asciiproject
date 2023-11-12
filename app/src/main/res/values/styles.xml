@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <!---Customize your theme here.-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+    </style>
+
+    <style name="ProgressBar.Large.Indeterminate" parent="android:Widget.DeviceDefault.Light.ProgressBar.Large">
+        <item name="android:layout_width">@dimen/dimen_64dp</item>
+        <item name="android:layout_height">@dimen/dimen_64dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:indeterminate">true</item>
+        <item name="android:indeterminateTintMode">src_atop</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+
+
+
+    <style name="TextAppearance.Shrine.TopHeadline.Bold" parent="TextAppearance.Shrine.TopHeadline">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Shrine.TopHeadline.Bold.Tirport" parent="TextAppearance.Shrine.TopHeadline">
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TextAppearance.Shrine.TopHeadline" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="Widget.Shrine.TextView" parent="Base.Widget.MaterialComponents.TextView">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textAppearance">@style/TextAppearance.Shrine.TopHeadline.Bold</item>
+    </style>
+
+    <style name="Widget.Shrine.TextView.Light" parent="Base.Widget.MaterialComponents.TextView">
+        <item name="android:fontFamily">@font/lato_light</item>
+        <item name="android:textAppearance">@style/TextAppearance.Shrine.TopHeadline.Bold</item>
+    </style>
+
+    <style name="Widget.Shrine.Button.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textFontWeight" tools:targetApi="p">1000</item>
+        <item name="android:textAppearance">@style/TextAppearance.Shrine.TopHeadline.Bold</item>
+        <item name="android:textColor">@color/tirport_navy_blue</item>
+    </style>
+
+    <style name="Widget.Shrine.Button.TirportTextButton" parent="Widget.MaterialComponents.Button.TirportTextButton">
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textFontWeight" tools:targetApi="p">1000</item>
+        <item name="android:textAppearance">@style/TextAppearance.Shrine.TopHeadline.Bold</item>
+        <item name="android:textColor">@color/tirport_navy_blue</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.Button.TirportTextButton" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:textColor">@color/mtrl_text_btn_text_color_selector</item>
+        <item name="iconTint">@color/mtrl_text_btn_text_color_selector</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="iconPadding">0dp</item>
+        <item name="backgroundTint" tools:ignore="PrivateResource">
+            @color/mtrl_btn_text_btn_bg_color_selector
+        </item>
+        <item name="rippleColor">@color/mtrl_btn_text_btn_ripple_color</item>
+    </style>
+
+    <style name="MaterialTirportTextButton" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:textColor">@color/mtrl_text_btn_text_color_selector</item>
+        <item name="iconTint">@color/mtrl_text_btn_text_color_selector</item>
+        <item name="backgroundTint" tools:ignore="PrivateResource">
+            @color/mtrl_btn_text_btn_bg_color_selector
+        </item>
+        <item name="rippleColor">@color/mtrl_btn_text_btn_ripple_color</item>
+    </style>
+
+    <style name="TirportTextButton" parent="MaterialTirportTextButton">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/dimen_18dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Shrine.TopHeadline.Bold.Tirport
+        </item>
+        <item name="android:textColor">@color/tirport_navy_blue</item>
+    </style>
+
+    <style name="Widget.Shrine.Button.IconButton" parent="Widget.Shrine.Button.TextButton">
+        <item name="android:insetLeft">@dimen/dimen_0dp</item>
+        <item name="android:insetTop">@dimen/dimen_0dp</item>
+        <item name="android:insetRight">@dimen/dimen_0dp</item>
+        <item name="android:insetBottom">@dimen/dimen_0dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconPadding">@dimen/dimen_0dp</item>
+    </style>
+
+    <style name="DropDownTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+        <item name="android:textColorHint">#2E6D80</item>
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="boxStrokeColor">#2E6D80</item>
+        <item name="boxBackgroundColor">#deffffff</item>
+        <item name="startIconTint">#00000000</item>
+        <item name="endIconTint">@color/colorSecondary</item>
+    </style>
+
+    <style name="TextAppearance.Shrine.Headline" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="roundview" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="android:bottomLeftRadius">20dp</item>
+        <item name="android:bottomRightRadius">20dp</item>
+        <item name="cornerSize">20dp</item>
+        <item name="color">@color/white</item>
+    </style>
+
+    //Shapeable Image view styles
+
+    <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.CornerSize25Percent" parent="">
+        <item name="cornerSize">25%</item>
+    </style>
+
+    <color name="tirport_navy_blue">
+        #002e6d</color>
+
+    <style name="TextLabel" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="RoundedCornersDialog" parent="@style/Theme.MaterialComponents.Dialog">
+        <item name="dialogCornerRadius">6dp</item>
+    </style>
+
+    <style name="TabLayoutAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/ts_13sp</item>
+        <item name="android:fontFamily">@font/lato_semibold</item>
+        <item name="android:textColor">@color/marine_blue</item>
+        <item name="tabMode">fixed</item>
+        <item name="tabGravity">fill</item>
+        <item name="tabMaxWidth">0dp</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="ChipAppearance" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipCornerRadius">@dimen/dimen_5dp</item>
+        <item name="chipStrokeColor">@color/transparent_background</item>
+        <item name="chipStrokeWidth">@dimen/dimen_2dp</item>
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:textColor">@color/transparent_background</item>
+    </style>
+    <!-- TODO: Gerekli Drawable eklenince yorum satırı kaldırılacak.
+    <style name="DropdownAppearance" parent="">
+        <item name="endIconDrawable">@drawable/ic_dropdown_end_icon</item>
+        <item name="endIconMode">dropdown_menu</item>
+        <item name="endIconTint">@null</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/dimen_5dp</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/dimen_5dp</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/dimen_5dp</item>
+        <item name="boxCornerRadiusTopStart">@dimen/dimen_5dp</item>
+        <item name="boxStrokeWidth">@dimen/dimen_0dp</item>
+    </style>
+    -->
+
+    <style name="CalendarPickerCell">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment" tools:targetApi="jelly_bean_mr1">center</item>
+    </style>
+
+    <style name="CalendarPickerCell.Month">
+        <item name="android:textSize">@dimen/calendar_month_textsize</item>
+        <item name="android:padding">@dimen/calendar_month_padding</item>
+        <item name="android:textColor">@color/calendar_month_font</item>
+    </style>
+
+    <style name="CalendarPickerCell.Week" parent="CalendarPickerCell">
+        <item name="android:textSize">@dimen/calendar_week_textsize</item>
+        <item name="android:textColor">@color/calendar_week_font</item>
+        <item name="fontFamily">@font/montserrat_medium</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="CalendarPickerCell.Day">
+        <item name="android:layout_width">@dimen/calendar_day_height</item>
+        <item name="android:layout_height">@dimen/calendar_day_height</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">@dimen/calendar_day_textsize</item>
+        <item name="fontFamily">@font/montserrat_bold</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/calendar_day_normal_font</item>
+    </style>
+
+    <style name="BottomSheetSelectionDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:colorBackground">@color/transparent</item>
+        <item name="behavior_peekHeight">250dp</item>
+    </style>
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+    <style name="CheckBoxStyle" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:background">@null</item>
+        <item name="android:foreground">@null</item>
+    </style>
+</resources>
