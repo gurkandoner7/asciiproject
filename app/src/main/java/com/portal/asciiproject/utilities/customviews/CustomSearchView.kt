@@ -33,12 +33,13 @@ class CustomSearchView @JvmOverloads constructor(
 
                 override fun onQueryTextChange(newText: String?): Boolean {
                     onQueryTextChangedListener?.invoke(newText ?: "")
-                    if (newText?.isEmpty() == true) {
+                    if (newText.isNullOrEmpty()) {
                         onSearchClosedListener?.invoke()
+                    } else {
+                        onSearchSubmittedListener?.invoke(newText ?: "")
                     }
-                    return false
-                }
-            }
+                    return true
+                }            }
         )
 
         binding.deportakFilterSearch.setOnCloseListener {

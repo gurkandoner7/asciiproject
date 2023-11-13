@@ -11,15 +11,20 @@ import com.portal.asciiproject.R
 import com.portal.asciiproject.data.ProductItem
 import com.portal.asciiproject.databinding.ItemProductBinding
 import com.portal.asciiproject.utilities.helper.Util
+import java.util.Locale
 
 @SuppressLint("NotifyDataSetChanged")
 class CoffeeTypesAdapter(
     private val context: Context,
     private val productItems: MutableList<ProductItem>,
     private val onItemClicked: (ProductItem) -> Unit,
-
 ) : RecyclerView.Adapter<CoffeeTypesAdapter.CoffeeTypeViewHolder>() {
+    private var filteredItems: MutableList<ProductItem> = mutableListOf()
 
+    init {
+        filteredItems.addAll(productItems)
+
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CoffeeTypeViewHolder {
         val binding =
             ItemProductBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -27,12 +32,12 @@ class CoffeeTypesAdapter(
     }
 
     override fun onBindViewHolder(holder: CoffeeTypeViewHolder, position: Int) {
-        val productItem = productItems[position]
+        val productItem = filteredItems[position]
         holder.bind(productItem)
     }
 
     override fun getItemCount(): Int {
-        return productItems.size
+        return filteredItems.size
     }
 
     override fun onAttachedToRecyclerView(recyclerView: RecyclerView) {
@@ -65,9 +70,35 @@ class CoffeeTypesAdapter(
         }
     }
 
+    fun filter(query: String) {
+        filteredItems.clear()
+
+        if (query.isEmpty()) {
+            filteredItems.addAll(productItems)
+        } else {
+            val lowercaseQuery = query.toLowerCase(Locale.getDefault())
+            for (item in productItems) {
+                if (item.productName?.toLowerCase(Locale.getDefault())?.contains(lowercaseQuery) == true) {
+                    filteredItems.add(item)
+                }
+            }
+        }
+        notifyDataSetChanged()
+    }
+    fun getFilteredItems(): List<ProductItem> {
+        return filteredItems
+    }
+
+    fun clearFilter(){
+        filteredItems.clear()
+        filteredItems.addAll(productItems)
+    }
+
 
     fun addItem(items: List<ProductItem>) {
         productItems.addAll(items)
+        filteredItems.clear()
+        filteredItems.addAll(productItems)
         notifyDataSetChanged()
     }
 }

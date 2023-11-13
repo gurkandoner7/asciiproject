@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.addCallback
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.portal.asciiproject.R
@@ -48,7 +47,21 @@ class FragmentHome : BaseFragment(R.layout.fragment_home) {
         binding.rvTabs.adapter = adapter
         requireActivity().onBackPressedDispatcher.addCallback(this) {}
         binding.tvLocation.setText("Atasehir, Istanbul")
+        binding.svCoffee.apply {
+            setOnQueryTextChangedListener { newText ->
+                if (newText != "") {
+                    adapter.filter(newText)
+                    adapter.getFilteredItems()
+                } else {
+                    adapter.clearFilter()
+                }
+            }
+            setOnSearchClosedListener {
+                adapter.clearFilter()
+            }
+        }
+
     }
-
-
 }
+
+
