@@ -16,7 +16,7 @@ import com.portal.asciiproject.utilities.helper.Util
 class CoffeeTypesAdapter(
     private val context: Context,
     private val productItems: MutableList<ProductItem>,
-    private val onItemClicked: (ProductItem) -> Unit
+    private val onItemClicked: (ProductItem) -> Unit,
 
 ) : RecyclerView.Adapter<CoffeeTypesAdapter.CoffeeTypeViewHolder>() {
 
@@ -58,13 +58,13 @@ class CoffeeTypesAdapter(
                         it
                     )
                 })
-                btnAdd.setButtonText("+")
                 btnAdd.setOnClickListener {
                     Log.d("Tıkladın", "Evet")
                 }
             }
         }
     }
+
 
     fun addItem(items: List<ProductItem>) {
         productItems.addAll(items)

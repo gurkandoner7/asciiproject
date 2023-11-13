@@ -3,6 +3,7 @@ package com.portal.asciiproject.ui.home.fragment
 import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.addCallback
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -19,11 +20,13 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class FragmentHome : BaseFragment(R.layout.fragment_home) {
 
-    private val homeViewModel: HomeViewModel by viewModels()
+    private val homeViewModel: HomeViewModel by activityViewModels()
 
     private val binding: FragmentHomeBinding by viewBinding(FragmentHomeBinding::bind)
 
     private lateinit var adapter: CoffeeTypesAdapter
+
+    private val bundle = Bundle()
 
 
     override fun observeVariables() {
@@ -36,11 +39,11 @@ class FragmentHome : BaseFragment(R.layout.fragment_home) {
         }
     }
 
-
     override fun initUI(savedInstanceState: Bundle?) {
         adapter = CoffeeTypesAdapter(requireContext(), mutableListOf(),
             onItemClicked = {
-                findNavController().navigate(R.id.action_homeFragment_to_detailFragment)
+                homeViewModel.setSelectedItem(it)
+                findNavController().navigate(R.id.action_homeFragment_to_detailFragment, bundle)
             })
         binding.rvTabs.adapter = adapter
         requireActivity().onBackPressedDispatcher.addCallback(this) {}
