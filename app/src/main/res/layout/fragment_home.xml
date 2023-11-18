@@ -17,8 +17,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dimen_24dp"
-        android:text="@string/location"
         android:layout_marginTop="@dimen/dimen_8dp"
+        android:text="@string/location"
         android:textColor="@color/locationcolor"
         android:textSize="@dimen/ts_12sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,8 +48,8 @@
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/profilecat" />
     </androidx.cardview.widget.CardView>
@@ -108,19 +108,93 @@
             app:textType="Bold_underlined" />
     </androidx.cardview.widget.CardView>
 
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_8dp"
+        android:layout_marginVertical="@dimen/dimen_16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:scrollbarAlwaysDrawHorizontalTrack="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvFreeBuy">
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="@dimen/dimen_100dp"
+            android:layout_height="@dimen/dimen_43dp"
+            android:layout_marginHorizontal="@dimen/dimen_4dp"
+            android:background="@drawable/bg_radio_button"
+            android:button="@null"
+            android:padding="@dimen/dimen_4dp"
+            android:text="@string/cappucino"
+            android:textAlignment="center"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="@dimen/dimen_70dp"
+            android:layout_height="@dimen/dimen_43dp"
+            android:layout_marginHorizontal="@dimen/dimen_4dp"
+            android:background="@drawable/bg_radio_button"
+            android:button="@null"
+            android:padding="@dimen/dimen_4dp"
+            android:text="@string/mocha"
+            android:textAlignment="center"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="@dimen/dimen_100dp"
+            android:layout_height="@dimen/dimen_43dp"
+            android:layout_marginHorizontal="@dimen/dimen_4dp"
+            android:background="@drawable/bg_radio_button"
+            android:button="@null"
+            android:padding="@dimen/dimen_4dp"
+            android:text="@string/americano"
+            android:textAlignment="center"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="@dimen/dimen_80dp"
+            android:layout_height="@dimen/dimen_43dp"
+            android:layout_marginHorizontal="@dimen/dimen_4dp"
+            android:background="@drawable/bg_radio_button"
+            android:button="@null"
+            android:padding="@dimen/dimen_4dp"
+            android:text="@string/latte"
+            android:textAlignment="center"
+            tools:ignore="TouchTargetSizeCheck" />
+    </RadioGroup>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTabs"
         android:layout_width="@dimen/dimen_0dp"
         android:layout_height="@dimen/dimen_0dp"
+        android:layout_marginHorizontal="@dimen/dimen_40dp"
         android:layout_marginTop="@dimen/dimen_16dp"
         android:layout_marginBottom="@dimen/dimen_32dp"
-        android:layout_marginHorizontal="@dimen/dimen_40dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cvFreeBuy"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup"
         tools:listitem="@layout/item_product" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/home_nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground"
+        app:itemIconTint="@color/ascii_brown_button"
+        app:itemTextColor="@color/ascii_brown_button"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_nav_menu"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

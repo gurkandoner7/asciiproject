@@ -24,6 +24,7 @@
             android:id="@+id/ivCoffee"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:scaleType="fitXY"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/coffeetest" />
     </androidx.cardview.widget.CardView>
@@ -62,12 +63,12 @@
         app:layout_constraintTop_toBottomOf="@id/tvWith"
         tools:text="$2.23" />
 
-    <com.portal.asciiproject.utilities.customviews.AsciiContinueButton
+    <ImageButton
         android:id="@+id/btnAdd"
-        android:layout_width="@dimen/dimen_20dp"
-        android:layout_height="@dimen/dimen_20dp"
-        android:layout_marginEnd="@dimen/dimen_8dp"
-        android:text="+"
+        android:layout_width="@dimen/dimen_30dp"
+        android:layout_height="@dimen/dimen_30dp"
+        android:src="@android:drawable/ic_input_add"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/tvPrice"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvPrice" />

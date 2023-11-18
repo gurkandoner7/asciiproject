@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <View
+        android:id="@+id/viewTop"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimen_1dp"
+        android:layout_marginTop="@dimen/dimen_16dp"
+        android:layout_marginBottom="@dimen/dimen_16dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/cvFavoriteWarehouses"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvFavoriteWarehouses"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimen_80dp"
+        android:layout_marginHorizontal="@dimen/dimen_24dp"
+        app:cardCornerRadius="@dimen/dimen_10dp"
+        app:cardElevation="@dimen/dimen_8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clFavorites"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivFavorite"
+                android:scaleType="fitXY"
+                android:layout_width="@dimen/dimen_100dp"
+                android:layout_height="@dimen/dimen_80dp"
+                android:src="@color/ascii_brown_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="@dimen/dimen_227dp"
+                android:layout_height="match_parent"
+                app:layout_constraintStart_toEndOf="@id/ivFavorite"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.portal.asciiproject.utilities.customviews.AsciiTextView
+                    android:id="@+id/tvHeader"
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_14dp"
+                    android:layout_marginEnd="@dimen/dimen_8dp"
+                    android:layout_marginTop="@dimen/dimen_8dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textSize="@dimen/ts_14sp"
+                    android:textColor="@color/header_text_rv"
+                    app:layout_constraintEnd_toStartOf="@+id/btnFavorite"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:textType="Bold"
+                    tools:text="Cappuccino" />
+
+
+                <com.portal.asciiproject.utilities.customviews.AsciiTextView
+                    android:id="@+id/tvWith"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/dimen_6dp"
+                    android:textColor="@color/with_color"
+                    android:textSize="@dimen/ts_14sp"
+                    android:text="@string/with"
+                    app:layout_constraintStart_toStartOf="@+id/tvHeader"
+                    app:layout_constraintTop_toBottomOf="@+id/tvHeader"
+                    app:textType="Medium_underlined"
+                    tools:text="with Oat Milk" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/btnFavorite"
+                    android:layout_width="@dimen/dimen_24dp"
+                    android:layout_height="@dimen/dimen_22dp"
+                    android:layout_marginEnd="@dimen/dimen_5dp"
+                    android:background="@null"
+                    android:clickable="true"
+                    android:src="@drawable/ic_vector_heart"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvHeader" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimen_1dp"
+        android:layout_marginTop="@dimen/dimen_16dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvFavoriteWarehouses" />
+</androidx.constraintlayout.widget.ConstraintLayout>

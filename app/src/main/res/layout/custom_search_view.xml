@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <SearchView
-        android:id="@+id/deportakFilterSearch"
+        android:id="@+id/filterSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/search_view_bg"

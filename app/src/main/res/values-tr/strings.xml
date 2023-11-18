@@ -1,0 +1,40 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ExtraTranslation">
+    <string name="app_name">Ascii</string>
+    <string name="get_started">Başlayalım</string>
+    <string name="teaser_coffee_text">Harika bir kahve, \ndamak tadınıza\n uygun.</string>
+    <string name="the_best_grain">En iyi kahve çekirdekleri, en kaliteli kavurma, güçlü bir lezzet.</string>
+    <string name="with">%!% ile birlikte</string>
+    <string name="location">Konum</string>
+    <string name="search_coffee">Kahve Ara</string>
+    <string name="promo">Promosyon</string>
+    <string name="buy_free">Beşinci kahven \nbizden</string>
+    <string name="detail">Detay</string>
+    <string name="description">Açıklama</string>
+    <string name="desc">Cappuccino yaklaşık 150 ml (5 oz) bir içecektir ve içinde 25 ml espresso kahve ve 85 ml taze süt bulunur. Cappuccino\'nun üzerindeki köpük, sütü buharlayarak ve köpürterek elde edilir, bu da ona kremsi ve kadifemsi bir dokunuş kazandırır. Espresso kahve, yüksek basınçlı sıcak su kullanılarak demlenir ve ince öğütülmüş kahve çekirdeklerinden geçirilir, bu da güçlü ve konsantre bir lezzet elde edilmesini sağlar.</string>
+    <string name="size">Boyut</string>
+    <string name="small">Küçük</string>
+    <string name="medium">Orta</string>
+    <string name="large">Büyük</string>
+    <string name="price">Fiyat</string>
+    <string name="buy_now">Satın Al</string>
+    <string name="cappucino">Cappuccino</string>
+    <string name="mocha">Mocha</string>
+    <string name="americano">Americano</string>
+    <string name="latte">Latte</string>
+    <string name="list">Liste</string>
+    <string name="favorite">Favori</string>
+    <string name="remove_fav">Bu ürünü favoriler listenizden kaldırmak istediğinizden emin misiniz?</string>
+    <string name="approve">Onayla</string>
+    <string name="cancel">İptal</string>
+    <string name="confirmation">Onaylama</string>
+    <string name="product_flat_white">Flat White</string>
+    <string name="product_milk_oat">Yulaf Sütü</string>
+    <string name="product_milk_chocolate">Çikolata Sütü</string>
+    <string name="product_milk_almond">Badem Sütü</string>
+    <string name="product_milk_hazelnut">Fındık Sütü</string>
+    <string name="product_milk_coconut">Hindistan Cevizi Sütü</string>
+    <string name="product_milk_cashew">Kaju Sütü</string>
+    <string name="product_milk_soy">Soya Sütü</string>
+    <string name="buy_now_dialog">Bu ürünü (%!%) satın almak istediğinizden emin misiniz?</string>
+
+</resources>

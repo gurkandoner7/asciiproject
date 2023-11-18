@@ -7,7 +7,7 @@
     <string name="location">Location</string>
     <string name="search_coffee">Search Coffee</string>
     <string name="promo">Promo</string>
-    <string name="buy_free">Buy one get \none FREE</string>
+    <string name="buy_free">The fifth coffee \nis on us.</string>
     <string name="detail">Detail</string>
     <string name="description">Description</string>
     <string name="desc">A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85 ml of fresh milk. The foam on top of the cappuccino is made by steaming and frothing the milk, which gives it a creamy and velvety texture. The espresso coffee is brewed using high-pressure hot water that is forced through finely ground coffee beans, resulting in a strong and concentrated flavor.</string>
@@ -17,4 +17,24 @@
     <string name="large">Large</string>
     <string name="price">Price</string>
     <string name="buy_now">Buy Now</string>
+    <string name="cappucino">Cappucino</string>
+    <string name="mocha">Mocha</string>
+    <string name="americano">Americano</string>
+    <string name="latte">Latte</string>
+    <string name="list">List</string>
+    <string name="favorite">Favorite</string>
+    <string name="remove_fav">Are you sure you want to remove this product from your favorites list?</string>
+    <string name="approve">Approve</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirmation">Confirmation</string>
+    <string name="product_flat_white">Flat White</string>
+    <string name="product_milk_oat">Oat Milk</string>
+    <string name="product_milk_chocolate">Chocolate</string>
+    <string name="product_milk_almond">Almond Milk</string>
+    <string name="product_milk_hazelnut">Hazelnut Milk</string>
+    <string name="product_milk_coconut">Coconut Milk</string>
+    <string name="product_milk_cashew">Cashew Milk</string>
+    <string name="product_milk_soy">Soy Milk</string>
+    <string name="buy_now_dialog">Are you sure you want to buy this (%!%) product?</string>
+
 </resources>

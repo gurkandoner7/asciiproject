@@ -22,7 +22,7 @@ class CustomSearchView @JvmOverloads constructor(
 
     init {
         _binding = CustomSearchViewBinding.inflate(LayoutInflater.from(context), this, true)
-        binding.deportakFilterSearch.setOnQueryTextListener(
+        binding.filterSearch.setOnQueryTextListener(
             object : SearchView.OnQueryTextListener {
 
                 override fun onQueryTextSubmit(query: String?): Boolean {
@@ -42,7 +42,7 @@ class CustomSearchView @JvmOverloads constructor(
                 }            }
         )
 
-        binding.deportakFilterSearch.setOnCloseListener {
+        binding.filterSearch.setOnCloseListener {
             onSearchClosedListener?.invoke()
             true
         }

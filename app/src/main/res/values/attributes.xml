@@ -86,7 +86,6 @@
 
     <declare-styleable name="CalendarPicker">
         <attr name="pickerType" format="enum">
-            <enum name="tirport" value="0" />
             <enum name="Ascii" value="1" />
         </attr>
         <attr name="showDayOfWeekTitle" format="boolean" />

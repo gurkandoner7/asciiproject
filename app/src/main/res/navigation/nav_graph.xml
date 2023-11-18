@@ -19,8 +19,22 @@
         <action
             android:id="@+id/action_homeFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_fragmentFavorites"
+            app:destination="@id/fragmentFavorites" />
+        <action
+            android:id="@+id/action_homeFragment_to_splashFragment"
+            app:destination="@id/splashFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/fragmentFavorites"
+        android:name="com.portal.asciiproject.ui.home.fragment.FragmentFavorites"
+        tools:layout="@layout/fragment_favorites">
 
+        <action
+            android:id="@+id/action_fragmentFavorite_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.portal.asciiproject.ui.detail.fragment.FragmentDetail"

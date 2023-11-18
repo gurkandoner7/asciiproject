@@ -23,7 +23,6 @@ class CoffeeTypesAdapter(
 
     init {
         filteredItems.addAll(productItems)
-
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CoffeeTypeViewHolder {
         val binding =

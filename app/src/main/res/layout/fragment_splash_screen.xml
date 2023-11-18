@@ -16,6 +16,43 @@
         app:srcCompat="@drawable/bg_splash"
         />
 
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="@dimen/dimen_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_24dp"
+        android:layout_marginTop="@dimen/dimen_32dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioEnglish"
+            android:layout_width="@dimen/dimen_30dp"
+            android:layout_height="@dimen/dimen_30dp"
+            android:background="@drawable/bg_radio_button"
+            android:button="@color/white"
+            android:padding="@dimen/dimen_4dp"
+            android:textColor="@color/white"
+            android:text="EN"
+            android:textAlignment="center"
+            />
+
+        <RadioButton
+            android:id="@+id/radioTurkish"
+            android:layout_width="@dimen/dimen_30dp"
+            android:layout_height="@dimen/dimen_30dp"
+            android:layout_marginHorizontal="@dimen/dimen_8dp"
+            android:background="@drawable/bg_radio_button"
+            android:textColor="@color/white"
+            android:button="@null"
+            android:padding="@dimen/dimen_4dp"
+            android:text="TR"
+            android:textAlignment="center"
+            />
+
+    </RadioGroup>
+
     <com.portal.asciiproject.utilities.customviews.AsciiContinueButton
         android:id="@+id/btnSplash"
         android:layout_width="match_parent"

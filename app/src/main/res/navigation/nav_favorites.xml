@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_favorites"
+    app:startDestination="@id/fragmentFavorites">
+
+    <fragment
+        android:id="@+id/fragmentFavorites"
+        android:name="com.portal.asciiproject.ui.home.fragment.FragmentFavorites"
+        android:label="FragmentFavorites"
+        tools:layout="@layout/fragment_favorites"
+        >
+    </fragment>
+
+</navigation>

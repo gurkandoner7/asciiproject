@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+<resources xmlns:tools="http://schemas.android.com/tools">
 
 
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
@@ -18,16 +18,16 @@
     </style>
 
 
-
     <style name="CustomSearchViewTheme" parent="Widget.AppCompat.SearchView">
         <!-- Diğer özellikler -->
         <item name="android:textColorHint">@color/white</item>
     </style>
+
     <style name="TextAppearance.Shrine.TopHeadline.Bold" parent="TextAppearance.Shrine.TopHeadline">
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="TextAppearance.Shrine.TopHeadline.Bold.Tirport" parent="TextAppearance.Shrine.TopHeadline">
+    <style name="TextAppearance.Shrine.TopHeadline.Bold.Ascii" parent="TextAppearance.Shrine.TopHeadline">
         <item name="android:textStyle">normal</item>
     </style>
 
@@ -49,17 +49,10 @@
         <item name="android:fontFamily">@font/lato_bold</item>
         <item name="android:textFontWeight" tools:targetApi="p">1000</item>
         <item name="android:textAppearance">@style/TextAppearance.Shrine.TopHeadline.Bold</item>
-        <item name="android:textColor">@color/tirport_navy_blue</item>
+        <item name="android:textColor">@color/ascii_brown_button</item>
     </style>
 
-    <style name="Widget.Shrine.Button.TirportTextButton" parent="Widget.MaterialComponents.Button.TirportTextButton">
-        <item name="android:fontFamily">@font/lato_bold</item>
-        <item name="android:textFontWeight" tools:targetApi="p">1000</item>
-        <item name="android:textAppearance">@style/TextAppearance.Shrine.TopHeadline.Bold</item>
-        <item name="android:textColor">@color/tirport_navy_blue</item>
-    </style>
-
-    <style name="Widget.MaterialComponents.Button.TirportTextButton" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+    <style name="Widget.MaterialComponents.Button.AsciiTextButton" parent="Widget.MaterialComponents.Button.UnelevatedButton">
         <item name="android:textColor">@color/mtrl_text_btn_text_color_selector</item>
         <item name="iconTint">@color/mtrl_text_btn_text_color_selector</item>
         <item name="android:paddingLeft">0dp</item>
@@ -71,7 +64,7 @@
         <item name="rippleColor">@color/mtrl_btn_text_btn_ripple_color</item>
     </style>
 
-    <style name="MaterialTirportTextButton" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+    <style name="MaterialAsciiTextButton" parent="Widget.MaterialComponents.Button.UnelevatedButton">
         <item name="android:textColor">@color/mtrl_text_btn_text_color_selector</item>
         <item name="iconTint">@color/mtrl_text_btn_text_color_selector</item>
         <item name="backgroundTint" tools:ignore="PrivateResource">
@@ -80,12 +73,12 @@
         <item name="rippleColor">@color/mtrl_btn_text_btn_ripple_color</item>
     </style>
 
-    <style name="TirportTextButton" parent="MaterialTirportTextButton">
+    <style name="AsciiTextButton" parent="MaterialAsciiTextButton">
         <item name="android:fontFamily">@font/lato_regular</item>
         <item name="android:textSize">@dimen/dimen_18dp</item>
-        <item name="android:textAppearance">@style/TextAppearance.Shrine.TopHeadline.Bold.Tirport
+        <item name="android:textAppearance">@style/TextAppearance.Shrine.TopHeadline.Bold.Ascii
         </item>
-        <item name="android:textColor">@color/tirport_navy_blue</item>
+        <item name="android:textColor">@color/ascii_brown_button</item>
     </style>
 
     <style name="Widget.Shrine.Button.IconButton" parent="Widget.Shrine.Button.TextButton">
@@ -129,8 +122,6 @@
         <item name="cornerSize">25%</item>
     </style>
 
-    <color name="tirport_navy_blue">
-        #002e6d</color>
 
     <style name="TextLabel" parent="TextAppearance.Design.Hint">
         <item name="android:textSize">16sp</item>
@@ -189,6 +180,14 @@
         <item name="fontFamily">@font/montserrat_medium</item>
         <item name="android:maxLines">1</item>
         <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="AlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/ascii_brown_button</item>
+        <item name="android:textColorPrimary">@color/header_text_rv</item>
+        <item name="textType">Bold</item>
+        <item name="android:dialogCornerRadius">@dimen/dimen_8dp</item>
+        <item name="elevation">@dimen/dimen_4dp</item>
     </style>
 
     <style name="CalendarPickerCell.Day">
