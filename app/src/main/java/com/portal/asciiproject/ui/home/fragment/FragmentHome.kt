@@ -41,6 +41,7 @@ class FragmentHome : BaseFragment(R.layout.fragment_home) {
     }
 
     override fun initUI(savedInstanceState: Bundle?) {
+        binding.homeNavView.selectedItemId = R.id.navigation_list
         binding.homeNavView.apply {
             val navController = findNavController()
             setupWithNavController(navController)

@@ -27,6 +27,7 @@ class FragmentFavorites : BaseFragment(R.layout.fragment_favorites){
     }
 
     override fun initUI(savedInstanceState: Bundle?) {
+        binding.homeNavView.selectedItemId = R.id.navigation_favorites
         binding.homeNavView.apply {
             val navController = findNavController()
             setupWithNavController(navController)
