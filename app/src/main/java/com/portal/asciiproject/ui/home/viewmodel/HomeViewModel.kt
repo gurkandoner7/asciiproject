@@ -27,121 +27,236 @@ class HomeViewModel @Inject constructor(context: Context) : ViewModel() {
     init {
         val sampleProducts = listOf(
             ProductItem(
-
-                "Cappuccino", context.getString(R.string.product_milk_oat), "$2.99",
+                "Cappuccino", context.getString(R.string.product_milk_oat), 2.99,
 
                 R.drawable.coffee5, productFavorite = true
+                , productUnit = "₺"
+
             ),
             ProductItem(
-
-                "Espresso", context.getString(R.string.product_milk_chocolate), "$2.49",
+                "Espresso", context.getString(R.string.product_milk_chocolate), 2.49,
 
                 R.drawable.coffee1, productFavorite = true
+                , productUnit = "₺"
+
             ),
             ProductItem(
 
-                "Mocha", context.getString(R.string.product_milk_almond), "$3.49",
+                "Mocha", context.getString(R.string.product_milk_almond), 3.49,
 
                 R.drawable.coffee2, productFavorite = true
+                , productUnit = "₺"
+
+            ),
+            ProductItem(
+                "Cappuccino",
+                context.getString(R.string.product_milk_oat),
+                2.99,
+                R.drawable.coffee10,
+                productFavorite = true
+                , productUnit = "₺"
+
+            ),
+            ProductItem(
+                "Latte",
+                context.getString(R.string.product_milk_hazelnut),
+                3.99,
+                R.drawable.coffee1,
+                productUnit = "₺"
+            ),
+            ProductItem(
+                "Macchiato",
+                context.getString(R.string.product_milk_coconut),
+                3.29,
+                R.drawable.coffee4,
+                productUnit = "₺"
+            ),
+            ProductItem(
+                "Cappuccino",
+                context.getString(R.string.product_milk_oat),
+                2.99,
+                R.drawable.coffee3,
+                productUnit = "₺"
+            ),
+            ProductItem(
+                "Americano",
+                context.getString(R.string.product_milk_cashew),
+                2.99,
+                R.drawable.coffee1,
+                productUnit = "₺"
+            ),
+            ProductItem(
+                "Flat White",
+                context.getString(R.string.product_milk_soy),
+                3.49,
+                R.drawable.coffee2,
+                productUnit = "₺"
+            ),
+            ProductItem(
+                "Espresso",
+                context.getString(R.string.product_milk_oat),
+                2.49,
+                R.drawable.coffee3,
+                productUnit = "₺"
+            ),
+            ProductItem(
+                "Latte",
+                context.getString(R.string.product_milk_almond),
+                3.99,
+                R.drawable.coffee1,
+                productUnit = "₺"
+            ),
+            ProductItem(
+                "Macchiato",
+                context.getString(R.string.product_milk_hazelnut),
+                3.29,
+                R.drawable.coffee4,
+                productUnit = "₺"
+            ),
+            ProductItem(
+                "Americano",
+                context.getString(R.string.product_milk_coconut),
+                2.99,
+                R.drawable.coffee5,
+                productUnit = "₺"
+            ),
+            ProductItem(
+                "Flat White",
+                context.getString(R.string.product_milk_cashew),
+                3.49,
+                R.drawable.coffee2,
+                productUnit = "₺"
+            ),
+            ProductItem(
+                "Espresso",
+                context.getString(R.string.product_milk_soy),
+                2.49,
+                R.drawable.coffee5,
+                productUnit = "₺"
+            ),
+            ProductItem(
+                "Americano",
+                context.getString(R.string.product_milk_oat),
+                2.99,
+                R.drawable.coffee4,
+                productUnit = "₺"
+            ),
+            ProductItem(
+                "Flat White",
+                context.getString(R.string.product_milk_almond),
+                3.49,
+                R.drawable.coffee5,
+                productUnit = "₺"
+            ),
+            ProductItem(
+                "Espresso",
+                context.getString(R.string.product_milk_hazelnut),
+                2.49,
+                R.drawable.coffee9,
+                productUnit = "₺"
+            ),
+            ProductItem(
+                "Latte",
+                context.getString(R.string.product_milk_coconut),
+                3.99,
+                R.drawable.coffee2,
+                productUnit = "₺"
+            ),
+            ProductItem(
+                "Macchiato",
+                context.getString(R.string.product_milk_cashew),
+                3.29,
+                R.drawable.coffee3,
+                productUnit = "₺"
             ),
             ProductItem(
 
-                "Cappuccino", context.getString(R.string.product_milk_oat), "$2.99",
+                "Americano", context.getString(R.string.product_milk_soy), 2.99,
 
-                R.drawable.coffee10, productFavorite = true
-            ),
-            ProductItem("Latte", context.getString(R.string.product_milk_hazelnut), "$3.99", R.drawable.coffee1),
-            ProductItem(
-                "Macchiato", context.getString(R.string.product_milk_coconut), "$3.29", R.drawable.coffee4
-            ),
-            ProductItem("Cappuccino", context.getString(R.string.product_milk_oat), "$2.99", R.drawable.coffee3),
-            ProductItem(
-                "Americano", context.getString(R.string.product_milk_cashew), "$2.99", R.drawable.coffee1
-            ),
-            ProductItem("Flat White", context.getString(R.string.product_milk_soy), "$3.49", R.drawable.coffee2),
-            ProductItem("Espresso", context.getString(R.string.product_milk_oat), "$2.49", R.drawable.coffee3),
-            ProductItem("Latte", context.getString(R.string.product_milk_almond), "$3.99", R.drawable.coffee1),
-            ProductItem(
-                "Macchiato", context.getString(R.string.product_milk_hazelnut), "$3.29", R.drawable.coffee4
+                R.drawable.coffee4, productFavorite = true, productUnit = "₺"
             ),
             ProductItem(
-                "Americano", context.getString(R.string.product_milk_coconut), "$2.99", R.drawable.coffee5
-            ),
-            ProductItem(
-                "Flat White", context.getString(R.string.product_milk_cashew), "$3.49", R.drawable.coffee2
-            ),
-            ProductItem("Espresso", context.getString(R.string.product_milk_soy), "$2.49", R.drawable.coffee5),
-            ProductItem("Americano", context.getString(R.string.product_milk_oat), "$2.99", R.drawable.coffee4),
-            ProductItem(
-                "Flat White", context.getString(R.string.product_milk_almond), "$3.49", R.drawable.coffee5
-            ),
-            ProductItem(
-                "Espresso", context.getString(R.string.product_milk_hazelnut), "$2.49", R.drawable.coffee9
-            ),
-            ProductItem("Latte", context.getString(R.string.product_milk_coconut), "$3.99", R.drawable.coffee2),
-            ProductItem(
-                "Macchiato", context.getString(R.string.product_milk_cashew), "$3.29", R.drawable.coffee3
+                "Flat White",
+                context.getString(R.string.product_milk_oat),
+                3.49,
+                R.drawable.coffee5,
+                productUnit = "₺"
             ),
             ProductItem(
 
-                "Americano", context.getString(R.string.product_milk_soy), "$2.99",
+                "Espresso", context.getString(R.string.product_milk_almond), 2.49,
 
-                R.drawable.coffee4, productFavorite = true
-            ),
-            ProductItem("Flat White", context.getString(R.string.product_milk_oat), "$3.49", R.drawable.coffee5),
-            ProductItem(
-
-                "Espresso", context.getString(R.string.product_milk_almond), "$2.49",
-
-                R.drawable.coffee3, productFavorite = true
+                R.drawable.coffee3, productFavorite = true, productUnit = "₺"
             ),
             ProductItem(
 
-                "Latte", context.getString(R.string.product_milk_hazelnut), "$3.99",
+                "Latte", context.getString(R.string.product_milk_hazelnut), 3.99,
 
-                R.drawable.coffee1, productFavorite = true
+                R.drawable.coffee1, productFavorite = true, productUnit = "₺"
             ),
             ProductItem(
 
-                "Macchiato", context.getString(R.string.product_milk_coconut), "$3.29",
+                "Macchiato", context.getString(R.string.product_milk_coconut), 3.29,
 
-                R.drawable.coffee4, productFavorite = true
+                R.drawable.coffee4, productFavorite = true, productUnit = "₺"
             ),
             ProductItem(
 
-                "Americano", context.getString(R.string.product_milk_cashew), "$2.99",
+                "Americano", context.getString(R.string.product_milk_cashew), 2.99,
 
-                R.drawable.coffee8, productFavorite = true
+                R.drawable.coffee8, productFavorite = true, productUnit = "₺"
             ),
-            ProductItem("Flat White", context.getString(R.string.product_milk_soy), "$3.49", R.drawable.coffee2),
             ProductItem(
-
-                "Espresso", context.getString(R.string.product_milk_oat), "$2.49",
-
-                R.drawable.coffee2, productFavorite = true
-            ),
-            ProductItem("Latte", context.getString(R.string.product_milk_almond), "$3.99", R.drawable.coffee1),
-            ProductItem(
-                "Macchiato", context.getString(R.string.product_milk_hazelnut), "$3.29", R.drawable.coffee4
+                "Flat White",
+                context.getString(R.string.product_milk_soy),
+                3.49,
+                R.drawable.coffee2,
+                productUnit = "₺"
             ),
             ProductItem(
 
-                "Americano", context.getString(R.string.product_milk_coconut), "$2.99",
+                "Espresso", context.getString(R.string.product_milk_oat), 2.49,
 
-                R.drawable.coffee9, productFavorite = true
+                R.drawable.coffee2, productFavorite = true, productUnit = "₺"
+            ),
+            ProductItem(
+                "Latte",
+                context.getString(R.string.product_milk_almond),
+                3.99,
+                R.drawable.coffee1,
+                productUnit = "₺"
+            ),
+            ProductItem(
+                "Macchiato",
+                context.getString(R.string.product_milk_hazelnut),
+                3.29,
+                R.drawable.coffee4,
+                productUnit = "₺"
             ),
             ProductItem(
 
-                "Flat White", context.getString(R.string.product_milk_cashew), "$3.49",
+                "Americano", context.getString(R.string.product_milk_coconut), 2.99,
 
-                R.drawable.coffee2, productFavorite = true
+                R.drawable.coffee9, productFavorite = true, productUnit = "₺"
             ),
-            ProductItem("Espresso", context.getString(R.string.product_milk_soy), "$2.49", R.drawable.coffee7),
             ProductItem(
 
-                "Latte", context.getString(R.string.product_milk_oat), "$3.99",
+                "Flat White", context.getString(R.string.product_milk_cashew), 3.49,
 
-                R.drawable.coffee4, productFavorite = true
+                R.drawable.coffee2, productFavorite = true, productUnit = "₺"
+            ),
+            ProductItem(
+                "Espresso",
+                context.getString(R.string.product_milk_soy),
+                2.49,
+                R.drawable.coffee7,
+                productUnit = "₺"
+            ),
+            ProductItem(
+
+                "Latte", context.getString(R.string.product_milk_oat), 3.99,
+
+                R.drawable.coffee4, productFavorite = true, productUnit = "₺"
             ),
         )
         setProductListItems(sampleProducts)

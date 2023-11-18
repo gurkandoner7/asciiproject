@@ -36,5 +36,8 @@
     <string name="product_milk_cashew">Kaju Sütü</string>
     <string name="product_milk_soy">Soya Sütü</string>
     <string name="buy_now_dialog">Bu ürünü (%!%) satın almak istediğinizden emin misiniz?</string>
+    <string name="go_to_homepage">Anasayfaya Dön</string>
+    <string name="completed_text">Siparişiniz başarıyla oluşturuldu.\nEn kısa sürede size ulaştırmaya\nçalışacağız. Teşekkür ederiz ^^</string>
+
 
 </resources>

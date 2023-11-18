@@ -51,7 +51,7 @@ class CoffeeTypesAdapter(
         fun bind(productItem: ProductItem) {
             binding.apply {
                 tvHeader.setText(productItem.productName)
-                tvPrice.setText(productItem.productPrice)
+                tvPrice.setText(productItem.productUnit + productItem.productPrice.toString())
                 clItem.setOnClickListener {
                     onItemClicked(productItem)
                 }
@@ -62,9 +62,6 @@ class CoffeeTypesAdapter(
                         it
                     )
                 })
-                btnAdd.setOnClickListener {
-                    Log.d("Tıkladın", "Evet")
-                }
             }
         }
     }

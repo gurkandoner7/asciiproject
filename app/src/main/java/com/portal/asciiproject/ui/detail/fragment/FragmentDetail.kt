@@ -7,6 +7,7 @@ import androidx.activity.addCallback
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.portal.asciiproject.CompletedDialogFragment
 import com.portal.asciiproject.R
 import com.portal.asciiproject.compose.BaseFragment
 import com.portal.asciiproject.compose.viewBinding
@@ -26,7 +27,7 @@ class FragmentDetail : BaseFragment(R.layout.fragment_detail) {
             homeViewModel.selectedItem.collect { productItem ->
                 productItem?.let {
                     binding.tvWith.setText(it.productWith)
-                    binding.tvPrice.setText(it.productPrice)
+                    binding.tvPrice.setText(it.productUnit + it.productPrice.toString())
                     binding.tvDesc.setText(it.productDesc)
                     binding.tvProductName.setText(it.productName)
                     it.productImage?.let { imageResId ->
@@ -79,6 +80,12 @@ class FragmentDetail : BaseFragment(R.layout.fragment_detail) {
             })
             .setPositiveButton(context?.getString(R.string.approve)) { dialog, _ ->
                 dialog.dismiss()
+                val completedDialogFragment = CompletedDialogFragment()
+                completedDialogFragment.show(
+                    parentFragmentManager,
+                    FragmentDetail::class.java.simpleName
+                )
+
             }
             .setNegativeButton(context?.getString(R.string.cancel)) { dialog, _ ->
                 dialog.dismiss()

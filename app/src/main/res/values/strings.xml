@@ -36,5 +36,6 @@
     <string name="product_milk_cashew">Cashew Milk</string>
     <string name="product_milk_soy">Soy Milk</string>
     <string name="buy_now_dialog">Are you sure you want to buy this (%!%) product?</string>
-
+    <string name="go_to_homepage">Go To Home Page</string>
+    <string name="completed_text">Your order has been successfully created. We will do our best to deliver it to you as soon as possible.\nThank you ^^</string>
 </resources>
