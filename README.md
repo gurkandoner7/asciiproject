@@ -17,9 +17,7 @@ Some of the technologies I used in the application include;
 
 At this stage, the application is capable of testing the UI of features such as "purchase, favorites, filtering, language switching" using mock data.
 
-You're welcome! Thank you for allowing me to review your project. 
-
-
+Thank you for reviewing my project.
 
 ![splashgif](https://github.com/gurkandoner7/asciiproject/assets/150553508/f3c84ac6-738b-4e92-8a3a-f3af8c9ff818)
 ![listgif](https://github.com/gurkandoner7/asciiproject/assets/150553508/be5b48e1-5f34-4117-8966-6eee7b6ffb58)
