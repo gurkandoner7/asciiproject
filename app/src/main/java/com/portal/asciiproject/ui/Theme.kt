@@ -14,7 +14,9 @@ val montserratFontFamily = FontFamily(
     Font(R.font.montserrat_semi_bold, FontWeight.SemiBold)
 )
 
+
 val customTextStyle = TextStyle(
     fontFamily = montserratFontFamily,
     fontSize = 16.sp
 )
+

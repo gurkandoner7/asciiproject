@@ -34,7 +34,7 @@ class FragmentSplashScreen : BaseFragment(R.layout.fragment_splash_screen) {
                     requireActivity().recreate()
                 },
                 onGetStartedClicked = {
-                    findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
+                    findNavController().navigate(R.id.action_splashFragment_to_evkurTestFragment)
                 }
             )
         }

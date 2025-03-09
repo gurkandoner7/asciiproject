@@ -16,6 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.portal.asciiproject.R
+import com.portal.asciiproject.ui.montserratFontFamily
 import com.portal.asciiproject.ui.splash.viewmodel.SplashScreenViewModel
 import com.portal.asciiproject.utilities.customviews.CustomButton
 
@@ -27,11 +28,7 @@ fun SplashScreen(
 ) {
     val context = LocalContext.current
     var selectedLanguage by remember {
-        mutableStateOf(
-            viewModel.getLanguageFromSharedPreferences(
-                context
-            )
-        )
+        mutableStateOf(viewModel.getLanguageFromSharedPreferences(context))
     }
 
     Box(
@@ -58,6 +55,7 @@ fun SplashScreen(
             Text(
                 text = stringResource(id = R.string.teaser_coffee_text),
                 style = TextStyle(color = Color.White, fontSize = 24.sp),
+                fontFamily = montserratFontFamily,
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 32.dp),
@@ -69,6 +67,7 @@ fun SplashScreen(
             Text(
                 text = stringResource(id = R.string.the_best_grain),
                 style = TextStyle(color = Color.LightGray, fontSize = 16.sp),
+                fontFamily = montserratFontFamily,
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 32.dp),
