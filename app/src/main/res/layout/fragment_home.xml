@@ -55,7 +55,7 @@
     </androidx.cardview.widget.CardView>
 
 
-    <com.portal.asciiproject.utilities.customviews.CustomSearchView
+    <SearchView
         android:id="@+id/svCoffee"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -193,8 +193,7 @@
         app:itemTextColor="@color/ascii_brown_button"
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/bottom_nav_menu"
-        />
+        app:menu="@menu/bottom_nav_menu" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

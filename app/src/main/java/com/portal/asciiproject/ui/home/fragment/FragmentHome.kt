@@ -85,6 +85,7 @@ class FragmentHome : BaseFragment(R.layout.fragment_home) {
                     radioButton4.id -> adapter.filter("Latte")
                 }
             }
+/*
             svCoffee.apply {
                 setOnQueryTextChangedListener { newText ->
                     radioGroup.clearCheck()
@@ -99,6 +100,7 @@ class FragmentHome : BaseFragment(R.layout.fragment_home) {
                     adapter.clearFilter()
                 }
             }
+*/
         }
 
     }

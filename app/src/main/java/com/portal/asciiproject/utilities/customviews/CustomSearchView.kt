@@ -1,64 +1,32 @@
+/*
 package com.portal.asciiproject.utilities.customviews
 
-import android.content.Context
-import android.util.AttributeSet
-import android.view.LayoutInflater
-import android.widget.SearchView
-import androidx.constraintlayout.widget.ConstraintLayout
-import com.portal.asciiproject.databinding.CustomSearchViewBinding
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.material.TextField
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
 
-class CustomSearchView @JvmOverloads constructor(
-    context: Context,
-    attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
-) : ConstraintLayout(context, attrs, defStyleAttr) {
+@Composable
+fun CustomSearchView(
+    onQueryTextChanged: (String) -> Unit,
+    onSearchSubmitted: (String) -> Unit,
+    onSearchClosed: () -> Unit
+) {
+    val query = remember { mutableStateOf("") }
 
-    private var onQueryTextChangedListener: ((String) -> Unit)? = null
-    private var onSearchSubmittedListener: ((String) -> Unit)? = null
-    private var onSearchClosedListener: (() -> Unit)? = null
-    private var _binding: CustomSearchViewBinding? = null
-    private val binding: CustomSearchViewBinding
-        get() = _binding!!
-
-    init {
-        _binding = CustomSearchViewBinding.inflate(LayoutInflater.from(context), this, true)
-        binding.filterSearch.setOnQueryTextListener(
-            object : SearchView.OnQueryTextListener {
-
-                override fun onQueryTextSubmit(query: String?): Boolean {
-                    onSearchSubmittedListener?.invoke(query ?: "")
-
-                    return true
-                }
-
-                override fun onQueryTextChange(newText: String?): Boolean {
-                    onQueryTextChangedListener?.invoke(newText ?: "")
-                    if (newText.isNullOrEmpty()) {
-                        onSearchClosedListener?.invoke()
-                    } else {
-                        onSearchSubmittedListener?.invoke(newText ?: "")
-                    }
-                    return true
-                }            }
-        )
-
-        binding.filterSearch.setOnCloseListener {
-            onSearchClosedListener?.invoke()
-            true
-        }
-
-    }
-
-    fun setOnQueryTextChangedListener(listener: (String) -> Unit) {
-        onQueryTextChangedListener = listener
-    }
-
-    fun setOnSearchSubmittedListener(listener: (String) -> Unit) {
-        onSearchSubmittedListener = listener
-    }
-
-    fun setOnSearchClosedListener(listener: () -> Unit) {
-        onSearchClosedListener = listener
-    }
-
-}
+    TextField(
+        value = query.value,
+        onValueChange = {
+            query.value = it
+            onQueryTextChanged(it)
+            if (it.isEmpty()) {
+                onSearchClosed()
+            } else {
+                onSearchSubmitted(it)
+            }
+        },
+        modifier = Modifier.fillMaxWidth()
+    )
+}*/

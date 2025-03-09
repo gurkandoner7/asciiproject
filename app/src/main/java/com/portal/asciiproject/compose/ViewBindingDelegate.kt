@@ -18,7 +18,6 @@ class ViewBindingDelegate<T : ViewBinding>(
     val cleanUp: ((T?) -> Unit)?
 ) : ReadOnlyProperty<Fragment, T> {
 
-    // A backing property to hold our value
     private var binding: T? = null
 
     init {
