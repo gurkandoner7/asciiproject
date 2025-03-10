@@ -1,5 +1,4 @@
 import android.content.Context
-import android.content.SharedPreferences
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -11,8 +10,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Checkbox
-import androidx.compose.material.CheckboxDefaults
 import androidx.compose.material.Divider
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
@@ -38,22 +35,14 @@ import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.rememberPagerState
 import kotlinx.coroutines.launch
-import kotlin.collections.component1
-import kotlin.collections.component2
-
 
 @OptIn(ExperimentalMaterialApi::class, ExperimentalPagerApi::class)
 @Composable
-fun ParameterTabs(parameters: List<List<Pair<String, List<String>>>>) {
+fun ParameterTabs(tabs: List<TabData>) {
     val pagerState = rememberPagerState()
     var selectedParameter by remember { mutableStateOf<Pair<String, List<String>>?>(null) }
     val bottomSheetState = rememberModalBottomSheetState(ModalBottomSheetValue.Hidden)
     val coroutineScope = rememberCoroutineScope()
-    val context = LocalContext.current
-    val sharedPreferences = context.getSharedPreferences("favorites", Context.MODE_PRIVATE)
-
-    var favoriteItemList by remember { mutableStateOf(loadFavorites(sharedPreferences)) }
-    var checkboxStates by remember { mutableStateOf(mutableMapOf<Pair<String, String>, Boolean>()) }
 
     ModalBottomSheetLayout(
         sheetState = bottomSheetState,
@@ -64,49 +53,12 @@ fun ParameterTabs(parameters: List<List<Pair<String, List<String>>>>) {
                     Spacer(modifier = Modifier.height(8.dp))
                     LazyColumn {
                         items(parameter.second) { content ->
-                            val key = parameter.first to content
-                            val isChecked = checkboxStates[key] ?: false
-
-                            Row(modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(vertical = 4.dp)) {
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(vertical = 4.dp)
+                            ) {
                                 Text(text = content, modifier = Modifier.weight(1f))
-                                Checkbox(
-                                    colors = CheckboxDefaults.colors(
-                                        checkedColor = Color.Red,
-                                        uncheckedColor = Color.Gray
-                                    ),
-                                    checked = isChecked,
-                                    onCheckedChange = { checked ->
-                                        checkboxStates = checkboxStates.toMutableMap()
-                                            .apply { put(key, checked) }
-                                        val currentFavorites =
-                                            favoriteItemList[parameter.first]?.toMutableList()
-                                                ?: mutableListOf()
-                                        if (checked) {
-                                            currentFavorites.add(content)
-                                            saveFavorite(
-                                                sharedPreferences,
-                                                parameter.first,
-                                                content
-                                            )
-                                        } else {
-                                            currentFavorites.remove(content)
-                                            removeFavorite(
-                                                sharedPreferences,
-                                                parameter.first,
-                                                content
-                                            )
-                                        }
-                                        favoriteItemList = favoriteItemList.toMutableMap().apply {
-                                            if (currentFavorites.isEmpty()) remove(parameter.first) else put(
-                                                parameter.first,
-                                                currentFavorites
-                                            )
-                                        }
-                                    },
-                                    modifier = Modifier.padding(8.dp)
-                                )
                             }
                             Divider()
                         }
@@ -126,94 +78,114 @@ fun ParameterTabs(parameters: List<List<Pair<String, List<String>>>>) {
                 backgroundColor = Color.Red,
                 contentColor = Color.White,
             ) {
-                parameters.forEachIndexed { index, _ ->
+                tabs.forEachIndexed { index, tab ->
                     Tab(
                         selected = pagerState.currentPage == index,
                         onClick = { coroutineScope.launch { pagerState.animateScrollToPage(index) } },
-                        text = { Text("Tab ${index + 1}") }
+                        text = { Text(tab.tabTitle) }
                     )
                 }
             }
             Spacer(modifier = Modifier.height(16.dp))
             HorizontalPager(
-                count = parameters.size,
+                count = tabs.size,
                 state = pagerState,
                 modifier = Modifier.fillMaxSize()
             ) { pageIndex ->
-                LazyColumn(modifier = Modifier
-                    .fillMaxSize()
-                    .padding(16.dp)) {
-                    items(parameters[pageIndex].size) { index ->
-                        val (title, contentList) = parameters[pageIndex][index]
-                        Column(modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(vertical = 4.dp)) {
+                LazyColumn(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(16.dp)
+                ) {
+                    items(tabs[pageIndex].subheadings.size) { index ->
+                        val subheading = tabs[pageIndex].subheadings[index]
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(vertical = 4.dp)
+                        ) {
                             Text(
-                                text = title,
+                                text = subheading.subheadingName,
                                 style = MaterialTheme.typography.h6,
                                 modifier = Modifier
                                     .fillMaxWidth()
                                     .clickable {
-                                        selectedParameter = title to contentList
+                                        selectedParameter =
+                                            subheading.subheadingName to subheading.contents.map { "${it.contentName}: ${it.contentDetails.joinToString()}" }
                                         coroutineScope.launch { bottomSheetState.show() }
                                     }
                                     .padding(8.dp)
                             )
                             Divider()
-                            favoriteItemList[title]?.let { favorites ->
-                                Column(modifier = Modifier.padding(start = 16.dp, top = 8.dp)) {
-                                    favorites.forEach { favorite ->
-                                        Text(
-                                            text = favorite,
-                                            style = MaterialTheme.typography.body1,
-                                            modifier = Modifier.padding(vertical = 4.dp)
-                                        )
-                                    }
-                                }
-                            }
                         }
                     }
                 }
             }
         }
     }
-}
+}data class TabData(
+    val tabTitle: String,
+    val subheadings: List<Subheading>
+)
 
-fun loadFavorites(sharedPreferences: SharedPreferences): MutableMap<String, List<String>> {
-    val favorites = mutableMapOf<String, List<String>>()
-    sharedPreferences.all.forEach { (key, value) ->
-        if (value is Set<*>) {
-            favorites[key] = value.filterIsInstance<String>()
-        }
-    }
-    return favorites
-}
+data class Subheading(
+    val subheadingName: String,
+    val contents: List<Content>
+)
 
-fun saveFavorite(sharedPreferences: SharedPreferences, parameter: String, content: String) {
-    val favorites =
-        sharedPreferences.getStringSet(parameter, mutableSetOf())?.toMutableSet() ?: mutableSetOf()
-    favorites.add(content)
-    sharedPreferences.edit().putStringSet(parameter, favorites).apply()
-}
-
-fun removeFavorite(sharedPreferences: SharedPreferences, parameter: String, content: String) {
-    val favorites =
-        sharedPreferences.getStringSet(parameter, mutableSetOf())?.toMutableSet() ?: mutableSetOf()
-    favorites.remove(content)
-    if (favorites.isEmpty()) {
-        sharedPreferences.edit().remove(parameter).apply()
-    } else {
-        sharedPreferences.edit().putStringSet(parameter, favorites).apply()
-    }
-}
+data class Content(
+    val contentName: String,
+    val contentDetails: List<String>
+)
 
 @Preview(showBackground = true)
 @Composable
 fun ParameterTabsPreview() {
-    val parameters = List(6) { tabIndex ->
-        List(5) { paramIndex ->
-            "Parameter ${paramIndex + 1}" to List(30) { "Content ${paramIndex + 1} - Detail ${it + 1}" }
-        }
-    }
-    ParameterTabs(parameters = parameters)
+    val tabs = listOf(
+        TabData(
+            tabTitle = "Genel Bilgiler",
+            subheadings = listOf(
+                Subheading(
+                    subheadingName = "Kişisel Bilgiler",
+                    contents = listOf(
+                        Content(contentName = "Adı", contentDetails = listOf("Gürkan")),
+                        Content(contentName = "Soyadı", contentDetails = listOf("Döner"))
+                    )
+                ),
+                Subheading(
+                    subheadingName = "İletişim Bilgileri",
+                    contents = listOf(
+                        Content(
+                            contentName = "Telefon Numarası",
+                            contentDetails = listOf("05462135454", "03526455455")
+                        )
+                    )
+                )
+            )
+        ),
+        TabData(
+            tabTitle = "Adres Bilgileri",
+            subheadings = listOf(
+                Subheading(
+                    subheadingName = "Geçersiz adresler",
+                    contents = listOf(
+                        Content(
+                            contentName = "İş adresi",
+                            contentDetails = listOf("evkur halkalı genel merkez")
+                        )
+                    )
+                ),
+                Subheading(
+                    subheadingName = "Adresler",
+                    contents = listOf(
+                        Content(
+                            contentName = "İş adresi",
+                            contentDetails = listOf("evkur halkalı genel merkez")
+                        )
+                    )
+                )
+            )
+        )
+    )
+    ParameterTabs(tabs = tabs)
 }
